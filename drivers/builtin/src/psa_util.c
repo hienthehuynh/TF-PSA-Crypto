@@ -18,7 +18,7 @@
 
 #include "psa_util_internal.h"
 
-#if defined(MBEDTLS_PSA_CRYPTO_CLIENT)
+#if defined(MBEDTLS_PSA_CRYPTO_CLIENT) || defined(MCUBOOT_USE_PSA_CRYPTO)
 
 #include <psa/crypto.h>
 

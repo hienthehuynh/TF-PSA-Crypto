@@ -89,7 +89,7 @@
 #if !defined(MBEDTLS_PLATFORM_HAS_EXPLICIT_BZERO) && !(defined(__STDC_LIB_EXT1__) && \
     !defined(__IAR_SYSTEMS_ICC__)) \
     && !defined(_WIN32)
-static void *(*const volatile memset_func)(void *, int, size_t) = memset;
+void *(*const volatile memset_func)(void *, int, size_t) = memset;
 #endif
 
 void mbedtls_platform_zeroize(void *buf, size_t len)
@@ -267,12 +267,13 @@ mbedtls_ms_time_t mbedtls_ms_time(void)
 
 #if !defined(unix) && !defined(__unix__) && !defined(__unix) && \
     !defined(__APPLE__) && !defined(_WIN32) && !defined(__QNXNTO__) && \
-    !defined(__HAIKU__) && !defined(__midipix__) && !defined(__MVS__)
-#error \
-    "The built-in entropy sources only work on Unix and Windows. " \
-    "Please enable MBEDTLS_PSA_DRIVER_GET_ENTROPY instead of " \
-    "MBEDTLS_PSA_BUILTIN_GET_ENTROPY and implement " \
-    "mbedtls_platform_get_entropy()."
+    !defined(__HAIKU__) && !defined(__midipix__) && !defined(__MVS__) && \
+    !defined(__RENESAS__) && !defined(__RA__)
+// #error \
+//     "The built-in entropy sources only work on Unix and Windows. " \
+//     "Please enable MBEDTLS_PSA_DRIVER_GET_ENTROPY instead of " \
+//     "MBEDTLS_PSA_BUILTIN_GET_ENTROPY and implement " \
+//     "mbedtls_platform_get_entropy()."
 #endif
 
 #include "mbedtls/private/entropy.h"

@@ -441,6 +441,9 @@
  * \c alg is the HMAC algorithm or the underlying hash algorithm. */
 #define PSA_KEY_TYPE_HMAC                           ((psa_key_type_t) 0x1100)
 
+/** ML_DSA key */
+#define PSA_KEY_TYPE_ML_DSA                           ((psa_key_type_t) 0x4006)
+
 /** A secret for key derivation.
  *
  * This key type is for high-entropy secrets only. For low-entropy secrets,
@@ -747,13 +750,6 @@
  */
 #define PSA_DH_FAMILY_RFC7919            ((psa_dh_family_t) 0x03)
 
-/** ML-KEM key pair.
- *
- */
-#define PSA_KEY_TYPE_ML_KEM_KEY_PAIR ((psa_key_type_t)0x7004)
-
-#define PSA_KEY_TYPE_ML_KEM_PUBLIC_KEY ((psa_key_type_t)0x4004)
-
 #define PSA_KEY_TYPE_IS_ML_KEM(type) \
     (PSA_KEY_TYPE_PUBLIC_KEY_OF_KEY_PAIR(type) == PSA_KEY_TYPE_ML_KEM_PUBLIC_KEY)
 
@@ -777,13 +773,6 @@
  */
 #define PSA_ALG_IS_KEY_ENCAPSULATION(alg)                               \
     PSA_ALG_IS_ML_KEM(alg)   
-
-/** ML-DSA key pair.
- *
- */
-#define PSA_KEY_TYPE_ML_DSA_KEY_PAIR ((psa_key_type_t)0x7006)
-
-#define PSA_KEY_TYPE_ML_DSA_PUBLIC_KEY ((psa_key_type_t)0x4006)
 
 #define PSA_KEY_TYPE_IS_ML_DSA(type) \
     (PSA_KEY_TYPE_PUBLIC_KEY_OF_KEY_PAIR(type) == PSA_KEY_TYPE_ML_DSA_PUBLIC_KEY)

@@ -40,6 +40,11 @@
 #include "../drivers/p256-m/p256-m_driver_entrypoints.h"
 
 #endif
+/* Headers for renesas transparent driver */
+#if defined(RENESAS_ACCEL_DRIVER)
+#include "../drivers/renesas/renesas_driver_entrypoints.h"
+
+#endif
 
 /* END-driver headers */
 
@@ -51,6 +56,7 @@
 #define MBEDTLS_TEST_OPAQUE_DRIVER_ID (2)
 #define MBEDTLS_TEST_TRANSPARENT_DRIVER_ID (3)
 #define P256_TRANSPARENT_DRIVER_ID (4)
+#define RENESAS_TRANSPARENT_DRIVER_ID (5)
 
 /* END-driver id */
 
@@ -143,6 +149,20 @@ psa_status_t psa_driver_wrapper_export_public_key(
 
 #if (defined(MBEDTLS_PSA_P256M_DRIVER_ENABLED) )
             status = p256_transparent_export_public_key
+                (attributes,
+                                key_buffer,
+                                key_buffer_size,
+                                data,
+                                data_size,
+                                data_length
+            );
+
+            if( status != PSA_ERROR_NOT_SUPPORTED )
+                return( status );
+#endif
+
+#if (defined(RENESAS_ACCEL_DRIVER) )
+            status = renesas_transparent_export_public_key
                 (attributes,
                                 key_buffer,
                                 key_buffer_size,

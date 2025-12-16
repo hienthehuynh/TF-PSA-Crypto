@@ -64,24 +64,24 @@
 #define PSA_WANT_ALG_HKDF_EXTRACT               1
 #define PSA_WANT_ALG_HKDF_EXPAND                1
 #define PSA_WANT_ALG_HMAC                       1
-#define PSA_WANT_ALG_MD5                        1
+//#define PSA_WANT_ALG_MD5                        1
 #define PSA_WANT_ALG_OFB                        1
 #define PSA_WANT_ALG_PBKDF2_HMAC                1
 #define PSA_WANT_ALG_PBKDF2_AES_CMAC_PRF_128    1
-#define PSA_WANT_ALG_RIPEMD160                  1
+//#define PSA_WANT_ALG_RIPEMD160                  1
 #define PSA_WANT_ALG_RSA_OAEP                   1
 #define PSA_WANT_ALG_RSA_PKCS1V15_CRYPT         1
 #define PSA_WANT_ALG_RSA_PKCS1V15_SIGN          1
 #define PSA_WANT_ALG_RSA_PSS                    1
-#define PSA_WANT_ALG_SHA_1                      1
-#define PSA_WANT_ALG_SHA_224                    1
+//#define PSA_WANT_ALG_SHA_1                      1
+//#define PSA_WANT_ALG_SHA_224                    1
 #define PSA_WANT_ALG_SHA_256                    1
-#define PSA_WANT_ALG_SHA_384                    1
-#define PSA_WANT_ALG_SHA_512                    1
-#define PSA_WANT_ALG_SHA3_224                   1
-#define PSA_WANT_ALG_SHA3_256                   1
-#define PSA_WANT_ALG_SHA3_384                   1
-#define PSA_WANT_ALG_SHA3_512                   1
+//#define PSA_WANT_ALG_SHA_384                    1
+//#define PSA_WANT_ALG_SHA_512                    1
+//#define PSA_WANT_ALG_SHA3_224                   1
+//#define PSA_WANT_ALG_SHA3_256                   1
+//#define PSA_WANT_ALG_SHA3_384                   1
+//#define PSA_WANT_ALG_SHA3_512                   1
 #define PSA_WANT_ALG_STREAM_CIPHER              1
 #define PSA_WANT_ALG_TLS12_PRF                  1
 #define PSA_WANT_ALG_TLS12_PSK_TO_MS            1
@@ -1978,6 +1978,9 @@
 //#define MBEDTLS_RSA_GEN_KEY_MIN_BITS            1024 /**<  Minimum RSA key size that can be generated in bits (Minimum possible value is 128 bits) */
 
 /** \} name SECTION: Builtin drivers */
+
+#define MBEDTLS_PSA_ACCEL_ALG_SHA_256
+#define RENESAS_ACCEL_DRIVER
 
 /* Do not enable except for testing. Will be removed in a future minor version.
  */

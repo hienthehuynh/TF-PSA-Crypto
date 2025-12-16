@@ -1,0 +1,12 @@
+{
+    "prefix":       "renesas",
+    "type":         "transparent",
+    "mbedtls/h_condition":   "defined(RENESAS_ACCEL_DRIVER)",
+    "headers":      ["../drivers/renesas/renesas_driver_entrypoints.h"],
+    "capabilities": [
+        {
+            "mbedtls/c_condition": "defined(RENESAS_ACCEL_DRIVER)",
+            "entry_points": ["import_key", "export_public_key", "hash_multipart"]
+        }
+    ]
+}

@@ -1980,6 +1980,7 @@
 /** \} name SECTION: Builtin drivers */
 
 #define MBEDTLS_PSA_ACCEL_ALG_SHA_256
+#define MBEDTLS_PSA_ACCEL_ALG_SHA_224
 #define RENESAS_ACCEL_DRIVER
 
 /* Do not enable except for testing. Will be removed in a future minor version.

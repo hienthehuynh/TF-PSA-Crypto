@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 #include "renesas_sha256.h"
+#include "renesas_sha512.h"
 
 typedef struct {
     psa_algorithm_t MBEDTLS_PRIVATE(alg);

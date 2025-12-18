@@ -74,10 +74,10 @@
 #define PSA_WANT_ALG_RSA_PKCS1V15_SIGN          1
 #define PSA_WANT_ALG_RSA_PSS                    1
 //#define PSA_WANT_ALG_SHA_1                      1
-//#define PSA_WANT_ALG_SHA_224                    1
+#define PSA_WANT_ALG_SHA_224                    1
 #define PSA_WANT_ALG_SHA_256                    1
-//#define PSA_WANT_ALG_SHA_384                    1
-//#define PSA_WANT_ALG_SHA_512                    1
+#define PSA_WANT_ALG_SHA_384                    1
+#define PSA_WANT_ALG_SHA_512                    1
 //#define PSA_WANT_ALG_SHA3_224                   1
 //#define PSA_WANT_ALG_SHA3_256                   1
 //#define PSA_WANT_ALG_SHA3_384                   1
@@ -1981,6 +1981,8 @@
 
 #define MBEDTLS_PSA_ACCEL_ALG_SHA_256
 #define MBEDTLS_PSA_ACCEL_ALG_SHA_224
+#define MBEDTLS_PSA_ACCEL_ALG_SHA_384
+#define MBEDTLS_PSA_ACCEL_ALG_SHA_512
 #define RENESAS_ACCEL_DRIVER
 
 /* Do not enable except for testing. Will be removed in a future minor version.

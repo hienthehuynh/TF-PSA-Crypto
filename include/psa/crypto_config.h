@@ -64,24 +64,24 @@
 #define PSA_WANT_ALG_HKDF_EXTRACT               1
 #define PSA_WANT_ALG_HKDF_EXPAND                1
 #define PSA_WANT_ALG_HMAC                       1
-//#define PSA_WANT_ALG_MD5                        1
+#define PSA_WANT_ALG_MD5                        1
 #define PSA_WANT_ALG_OFB                        1
 #define PSA_WANT_ALG_PBKDF2_HMAC                1
 #define PSA_WANT_ALG_PBKDF2_AES_CMAC_PRF_128    1
-//#define PSA_WANT_ALG_RIPEMD160                  1
+#define PSA_WANT_ALG_RIPEMD160                  1
 #define PSA_WANT_ALG_RSA_OAEP                   1
 #define PSA_WANT_ALG_RSA_PKCS1V15_CRYPT         1
 #define PSA_WANT_ALG_RSA_PKCS1V15_SIGN          1
 #define PSA_WANT_ALG_RSA_PSS                    1
-//#define PSA_WANT_ALG_SHA_1                      1
+#define PSA_WANT_ALG_SHA_1                      1
 #define PSA_WANT_ALG_SHA_224                    1
 #define PSA_WANT_ALG_SHA_256                    1
 #define PSA_WANT_ALG_SHA_384                    1
 #define PSA_WANT_ALG_SHA_512                    1
-//#define PSA_WANT_ALG_SHA3_224                   1
-//#define PSA_WANT_ALG_SHA3_256                   1
-//#define PSA_WANT_ALG_SHA3_384                   1
-//#define PSA_WANT_ALG_SHA3_512                   1
+#define PSA_WANT_ALG_SHA3_224                   1
+#define PSA_WANT_ALG_SHA3_256                   1
+#define PSA_WANT_ALG_SHA3_384                   1
+#define PSA_WANT_ALG_SHA3_512                   1
 #define PSA_WANT_ALG_STREAM_CIPHER              1
 #define PSA_WANT_ALG_TLS12_PRF                  1
 #define PSA_WANT_ALG_TLS12_PSK_TO_MS            1
@@ -117,6 +117,7 @@
 #define PSA_WANT_KEY_TYPE_ARIA                  1
 #define PSA_WANT_KEY_TYPE_CAMELLIA              1
 #define PSA_WANT_KEY_TYPE_CHACHA20              1
+#define PSA_WANT_KEY_TYPE_DES                   1
 #define PSA_WANT_KEY_TYPE_ECC_PUBLIC_KEY        1
 #define PSA_WANT_KEY_TYPE_DH_PUBLIC_KEY         1
 #define PSA_WANT_KEY_TYPE_RAW_DATA              1
@@ -176,7 +177,7 @@
  *
  * Enable functions that use the filesystem.
  */
-//#define MBEDTLS_FS_IO
+#define MBEDTLS_FS_IO
 
 /**
  * \def MBEDTLS_HAVE_TIME
@@ -191,7 +192,7 @@
  *
  * Comment if your system does not support time functions.
  */
-//#define MBEDTLS_HAVE_TIME
+#define MBEDTLS_HAVE_TIME
 
 /**
  * \def MBEDTLS_HAVE_TIME_DATE
@@ -212,7 +213,7 @@
  * mbedtls_platform_gmtime_r() at compile-time by using the macro
  * MBEDTLS_PLATFORM_GMTIME_R_ALT.
  */
-//#define MBEDTLS_HAVE_TIME_DATE
+#define MBEDTLS_HAVE_TIME_DATE
 
 /**
  * \def MBEDTLS_MEMORY_DEBUG
@@ -290,7 +291,7 @@
 //#define MBEDTLS_PLATFORM_SNPRINTF_ALT
 //#define MBEDTLS_PLATFORM_VSNPRINTF_ALT
 //#define MBEDTLS_PLATFORM_NV_SEED_ALT
-#define MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT
+//#define MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT
 //#define MBEDTLS_PLATFORM_MS_TIME_ALT
 
 /**
@@ -366,7 +367,7 @@
  *
  * Enable this layer to allow use of alternative memory allocators.
  */
-#define MBEDTLS_PLATFORM_MEMORY
+//#define MBEDTLS_PLATFORM_MEMORY
 
 /**
  * \def MBEDTLS_PLATFORM_NO_STD_FUNCTIONS
@@ -482,7 +483,7 @@
 //#define MBEDTLS_PLATFORM_NV_SEED_READ_MACRO   mbedtls_platform_std_nv_seed_read /**< Default nv_seed_read function to use, can be undefined */
 //#define MBEDTLS_PLATFORM_NV_SEED_WRITE_MACRO  mbedtls_platform_std_nv_seed_write /**< Default nv_seed_write function to use, can be undefined */
 //#define MBEDTLS_PLATFORM_PRINTF_MACRO        printf /**< Default printf macro to use, can be undefined */
-#define MBEDTLS_PLATFORM_SETBUF_MACRO      dummy_setbuf
+//#define MBEDTLS_PLATFORM_SETBUF_MACRO      setbuf /**< Default setbuf macro to use, can be undefined */
 /* Note: your snprintf must correctly zero-terminate the buffer! */
 //#define MBEDTLS_PLATFORM_SNPRINTF_MACRO    snprintf /**< Default snprintf macro to use, can be undefined */
 
@@ -585,7 +586,7 @@
  *
  * Uncomment to get errors on using deprecated functions and features.
  */
-#define MBEDTLS_DEPRECATED_REMOVED
+//#define MBEDTLS_DEPRECATED_REMOVED
 
 /** \def MBEDTLS_CHECK_RETURN
  *
@@ -649,7 +650,7 @@
  *
  * Enable the checkup functions (*_self_test).
  */
-//#define MBEDTLS_SELF_TEST
+#define MBEDTLS_SELF_TEST
 
 /**
  * \def MBEDTLS_TEST_CONSTANT_FLOW_MEMSAN
@@ -784,7 +785,7 @@
  *
  * Auto enables: PSA_WANT_ALG_ECB_NO_PADDING
  */
-//#define MBEDTLS_NIST_KW_C
+#define MBEDTLS_NIST_KW_C
 
 /**
  * \def MBEDTLS_PK_C
@@ -838,7 +839,7 @@
  *
  * Disable if you only need to support RFC 5915 + 5480 key formats.
  */
-//#define MBEDTLS_PK_PARSE_EC_EXTENDED
+#define MBEDTLS_PK_PARSE_EC_EXTENDED
 
 /**
  * \def MBEDTLS_PK_PARSE_EC_COMPRESSED
@@ -1021,7 +1022,7 @@
  *
  * Uncomment to enable the HMAC_DRBG random number generator.
  */
-//#define MBEDTLS_HMAC_DRBG_C
+#define MBEDTLS_HMAC_DRBG_C
 
 /**
  * \def MBEDTLS_PSA_CRYPTO_C
@@ -1100,7 +1101,7 @@
  *   client-only builds (#MBEDTLS_PSA_CRYPTO_CLIENT enabled and
  *   #MBEDTLS_PSA_CRYPTO_C disabled).
  */
-//#define MBEDTLS_PSA_BUILTIN_GET_ENTROPY
+#define MBEDTLS_PSA_BUILTIN_GET_ENTROPY
 
 /** \def MBEDTLS_PSA_CRYPTO_BUILTIN_KEYS
  *
@@ -1216,7 +1217,7 @@
  *           either MBEDTLS_PSA_ITS_FILE_C or a native implementation of
  *           the PSA ITS interface
  */
-//#define MBEDTLS_PSA_CRYPTO_STORAGE_C
+#define MBEDTLS_PSA_CRYPTO_STORAGE_C
 
 /**
  * \def MBEDTLS_PSA_DRIVER_GET_ENTROPY
@@ -1244,7 +1245,7 @@
  *   client-only builds (#MBEDTLS_PSA_CRYPTO_CLIENT enabled and
  *   #MBEDTLS_PSA_CRYPTO_C disabled).
  */
-#define MBEDTLS_PSA_DRIVER_GET_ENTROPY
+//#define MBEDTLS_PSA_DRIVER_GET_ENTROPY
 
 /**
  * \def MBEDTLS_PSA_ITS_FILE_C
@@ -1256,7 +1257,7 @@
  *
  * Requires: MBEDTLS_FS_IO
  */
-//#define MBEDTLS_PSA_ITS_FILE_C
+#define MBEDTLS_PSA_ITS_FILE_C
 
 /**
  * \def MBEDTLS_PSA_KEY_STORE_DYNAMIC
@@ -1273,7 +1274,7 @@
  * Module:  core/psa_crypto.c
  * Requires: MBEDTLS_PSA_CRYPTO_C
  */
-//#define MBEDTLS_PSA_KEY_STORE_DYNAMIC
+#define MBEDTLS_PSA_KEY_STORE_DYNAMIC
 
 /**
  * \def MBEDTLS_PSA_STATIC_KEY_SLOTS
@@ -1456,7 +1457,7 @@
  *
  * This modules adds support for the AES-NI instructions on x86.
  */
-//#define MBEDTLS_AESNI_C
+#define MBEDTLS_AESNI_C
 
 /**
  * \def MBEDTLS_AESCE_C
@@ -1482,7 +1483,7 @@
  *
  * This module adds support for the AES Armv8-A Cryptographic Extensions on Armv8 systems.
  */
-//#define MBEDTLS_AESCE_C
+#define MBEDTLS_AESCE_C
 
 /**
  * \def MBEDTLS_AES_ROM_TABLES
@@ -1561,8 +1562,8 @@
  * Remove decryption operation for AES, ARIA and Camellia block cipher.
  *
  * \note  This feature is incompatible with PSA_WANT_ALG_ECB_NO_PADDING,
- *        PSA_WANT_ALG_CBC_NO_PADDING, PSA_WANT_ALG_CBC_PKCS7 and
- *        MBEDTLS_NIST_KW_C.
+ *        PSA_WANT_ALG_CBC_NO_PADDING, PSA_WANT_ALG_CBC_PKCS7,
+ *        PSA_WANT_KEY_TYPE_DES and MBEDTLS_NIST_KW_C.
  *
  * Module:  drivers/builtin/src/aes.c
  *          drivers/builtin/src/aesce.c
@@ -1603,7 +1604,7 @@
  *
  * Comment this macro to disable NIST curves optimisation.
  */
-//#define MBEDTLS_ECP_NIST_OPTIM
+#define MBEDTLS_ECP_NIST_OPTIM
 
 /**
  * \def MBEDTLS_ECP_RESTARTABLE
@@ -1693,7 +1694,7 @@
  *
  * Comment to disable the use of assembly code.
  */
-//#define MBEDTLS_HAVE_ASM
+#define MBEDTLS_HAVE_ASM
 
 /**
  * \def MBEDTLS_HAVE_SSE2
@@ -1801,7 +1802,7 @@
  * Uncomment this macro to disable the use of CRT in RSA.
  *
  */
-#define MBEDTLS_RSA_NO_CRT
+//#define MBEDTLS_RSA_NO_CRT
 
 /**
  * \def MBEDTLS_SHA256_SMALLER
@@ -1978,12 +1979,6 @@
 //#define MBEDTLS_RSA_GEN_KEY_MIN_BITS            1024 /**<  Minimum RSA key size that can be generated in bits (Minimum possible value is 128 bits) */
 
 /** \} name SECTION: Builtin drivers */
-
-#define MBEDTLS_PSA_ACCEL_ALG_SHA_256
-#define MBEDTLS_PSA_ACCEL_ALG_SHA_224
-#define MBEDTLS_PSA_ACCEL_ALG_SHA_384
-#define MBEDTLS_PSA_ACCEL_ALG_SHA_512
-#define RENESAS_ACCEL_DRIVER
 
 /* Do not enable except for testing. Will be removed in a future minor version.
  */

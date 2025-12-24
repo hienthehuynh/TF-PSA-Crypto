@@ -1471,7 +1471,7 @@ static inline psa_status_t psa_driver_wrapper_hash_setup(
 
     /* Try setup on accelerators first */
 #if defined(RENESAS_ACCEL_DRIVER)
-    status = renesas_hash_setup( &operation->ctx.mbedtls_ctx, alg );
+    status = renesas_hash_setup( &operation->ctx.renesas_ctx, alg );
     if( status == PSA_SUCCESS )
         operation->id = RENESAS_TRANSPARENT_DRIVER_ID;
 
@@ -1513,8 +1513,8 @@ static inline psa_status_t psa_driver_wrapper_hash_clone(
 #if defined(RENESAS_ACCEL_DRIVER)
         case RENESAS_TRANSPARENT_DRIVER_ID:
             target_operation->id = RENESAS_TRANSPARENT_DRIVER_ID;
-            return( renesas_hash_clone( &source_operation->ctx.mbedtls_ctx,
-                                            &target_operation->ctx.mbedtls_ctx ) );
+            return( renesas_hash_clone( &source_operation->ctx.renesas_ctx,
+                                            &target_operation->ctx.renesas_ctx ) );
 #endif
 #if defined(MBEDTLS_PSA_BUILTIN_HASH)
         case PSA_CRYPTO_MBED_TLS_DRIVER_ID:
@@ -1544,7 +1544,7 @@ static inline psa_status_t psa_driver_wrapper_hash_update(
     {
 #if defined(RENESAS_ACCEL_DRIVER)
         case RENESAS_TRANSPARENT_DRIVER_ID:
-            return( renesas_hash_update( &operation->ctx.mbedtls_ctx,
+            return( renesas_hash_update( &operation->ctx.renesas_ctx,
                                              input, input_length ) );
 #endif
 #if defined(MBEDTLS_PSA_BUILTIN_HASH)
@@ -1575,7 +1575,7 @@ static inline psa_status_t psa_driver_wrapper_hash_finish(
     {
 #if defined(RENESAS_ACCEL_DRIVER)
         case RENESAS_TRANSPARENT_DRIVER_ID:
-            return( renesas_hash_finish( &operation->ctx.mbedtls_ctx,
+            return( renesas_hash_finish( &operation->ctx.renesas_ctx,
                                              hash, hash_size, hash_length ) );
 #endif
 #if defined(MBEDTLS_PSA_BUILTIN_HASH)
@@ -1604,7 +1604,7 @@ static inline psa_status_t psa_driver_wrapper_hash_abort(
     {
 #if defined(RENESAS_ACCEL_DRIVER)
         case RENESAS_TRANSPARENT_DRIVER_ID:
-            return( renesas_hash_abort( &operation->ctx.mbedtls_ctx ) );
+            return( renesas_hash_abort( &operation->ctx.renesas_ctx ) );
 #endif
 #if defined(MBEDTLS_PSA_BUILTIN_HASH)
         case PSA_CRYPTO_MBED_TLS_DRIVER_ID:

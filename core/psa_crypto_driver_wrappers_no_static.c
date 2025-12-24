@@ -42,7 +42,7 @@
 #endif
 /* Headers for renesas transparent driver */
 #if defined(RENESAS_ACCEL_DRIVER)
-#include "../drivers/renesas/renesas_driver_entrypoints.h"
+#include "renesas_driver_entrypoints.h"
 
 #endif
 

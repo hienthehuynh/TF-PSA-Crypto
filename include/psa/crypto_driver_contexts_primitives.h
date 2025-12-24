@@ -36,7 +36,7 @@
 #endif
 
 #if defined(RENESAS_ACCEL_DRIVER)
-#include "../drivers/renesas/renesas_crypto_primitives.h"
+#include "renesas_crypto_primitives.h"
 #endif
 
 #if defined(PSA_CRYPTO_DRIVER_TEST)

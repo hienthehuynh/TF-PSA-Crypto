@@ -35,6 +35,10 @@
 #include <libtestdriver1/tf-psa-crypto/include/psa/crypto.h>
 #endif
 
+#if defined(RENESAS_ACCEL_DRIVER)
+#include "renesas_crypto_primitives.h"
+#endif
+
 #if defined(PSA_CRYPTO_DRIVER_TEST)
 
 #if defined(MBEDTLS_TEST_LIBTESTDRIVER1) && \
@@ -91,6 +95,9 @@ typedef union {
     mbedtls_psa_hash_operation_t mbedtls_ctx;
 #if defined(PSA_CRYPTO_DRIVER_TEST)
     mbedtls_transparent_test_driver_hash_operation_t test_driver_ctx;
+#endif
+#if defined(RENESAS_ACCEL_DRIVER)
+    renesas_hash_operation_t renesas_ctx;
 #endif
 } psa_driver_hash_context_t;
 
